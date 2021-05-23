@@ -1,0 +1,46 @@
+plugins {
+  id "org.gretty" version "3.0.3"
+  id 'war'
+  id 'eclipse'
+}
+
+gretty {
+  httpPort = 8080
+  servletContainer = 'tomcat9'
+}
+
+repositories {
+  mavenCentral()
+  jcenter()
+}
+
+compileJava   {
+  sourceCompatibility = '1.8'
+  targetCompatibility = '1.8'
+}
+
+dependencies {
+  compileOnly ("javax.servlet:javax.servlet-api:3.1.0")
+  compileOnly ("javax.servlet.jsp:jsp-api:2.1")
+
+  implementation ("org.springframework:spring-context:${springVersion}")
+  implementation ("org.springframework:spring-webmvc:${springVersion}")
+  implementation ("org.springframework:spring-jdbc:${springVersion}")
+  implementation ("javax.servlet:javax.servlet-api:3.1.0")
+  implementation ("javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.1")
+  implementation ("javax.servlet:jstl:1.2")
+  implementation ("org.slf4j:slf4j-api:${slf4jVersion}")
+
+  runtimeOnly ("ch.qos.logback:logback-classic:${logbackVersion}")
+  runtimeOnly ("org.postgresql:postgresql:42.2.19")
+
+  testImplementation 'junit:junit:4.12'
+  testImplementation ("org.springframework:spring-test:${springVersion}")
+}
+
+test {
+  testLogging {
+    outputs.upToDateWhen {false}
+    showStandardStreams = true
+  }
+}

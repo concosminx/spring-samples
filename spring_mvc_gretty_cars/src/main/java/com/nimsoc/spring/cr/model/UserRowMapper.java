@@ -1,0 +1,23 @@
+package com.nimsoc.spring.cr.model;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
+
+@Component
+public class UserRowMapper implements RowMapper<User> {
+
+  @Override
+  public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+    User user = new User();
+    user.setUserId(rs.getInt("user_id"));
+    user.setUserName(rs.getString("username"));
+    user.setPhone(rs.getString("phone"));
+    user.setAddress(rs.getString("address"));
+    user.setAge(rs.getInt("age"));
+    user.setWallet(rs.getInt("wallet"));
+    return user;
+  }
+}
