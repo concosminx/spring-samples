@@ -1,0 +1,48 @@
+plugins {
+  id 'org.springframework.boot' version '2.4.3'
+  id "io.spring.dependency-management" version "1.0.11.RELEASE"
+  id 'java'
+}
+
+repositories {
+  mavenCentral()
+}
+
+//configurations {
+//  compileOnly {
+//    extendsFrom annotationProcessor
+//  }
+//}
+
+dependencies {
+  
+  compileOnly 'org.projectlombok:lombok'
+  annotationProcessor 'org.projectlombok:lombok'
+  
+  implementation ('org.springframework.boot:spring-boot-starter-webflux')
+  implementation ('org.springframework.boot:spring-boot-starter-thymeleaf')
+  implementation ('org.webjars:bootstrap:3.3.7-1')
+  implementation ('org.apache.httpcomponents:httpclient:4.4.1')
+  
+  developmentOnly 'org.springframework.boot:spring-boot-devtools'
+  
+  testImplementation ('org.springframework.boot:spring-boot-starter-test')
+  testImplementation ('io.projectreactor:reactor-test')
+}
+
+test {
+  useJUnitPlatform()
+  
+  testLogging {
+    outputs.upToDateWhen {false}
+    showStandardStreams = true
+  }
+}
+
+//@see https://mapstruct.org/documentation/stable/reference/html/
+/*tasks.withType(JavaCompile) {
+  options.compilerArgs = [
+            '-Amapstruct.suppressGeneratorTimestamp=true',
+            '-Amapstruct.defaultComponentModel=spring'
+  ]
+}*/

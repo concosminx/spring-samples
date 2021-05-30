@@ -1,0 +1,36 @@
+plugins {
+  id 'org.springframework.boot' version '2.3.3.RELEASE'
+  id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+  id 'java'
+}
+
+group = 'com.nimsoc.pets'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+  compileOnly {
+    extendsFrom annotationProcessor
+  }
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+  implementation 'org.springframework.boot:spring-boot-starter-web'
+  
+  implementation project(':core')
+  
+  annotationProcessor 'org.projectlombok:lombok'
+  developmentOnly 'org.springframework.boot:spring-boot-devtools'
+}
+
+test {
+  useJUnitPlatform()
+}
+
+
+//see https://stackoverflow.com/questions/66048129/spring-boot-2-4-2-and-thymeleaf-3-0-12-access-static-methods/66053568
