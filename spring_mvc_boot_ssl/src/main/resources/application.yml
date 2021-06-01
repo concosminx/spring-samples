@@ -1,0 +1,20 @@
+management:
+  security:
+    enabled: false
+server:
+  ssl:
+    key-store: classpath:simplessl.jks
+    key-store-password: simplepass
+    key-store-type: JKS
+    key-alias: simplessl
+    key-password: simplepass
+---
+spring:
+  profiles: dev
+server:
+  port: 8000
+---
+spring:
+  profiles: test
+server:
+  port: 9000

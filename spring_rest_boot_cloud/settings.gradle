@@ -1,0 +1,6 @@
+rootProject.name = 'spring_rest_boot_cloud'
+
+include 'config-server'
+include 'microservice-a'
+include 'service-consumer'
+include 'cloud'
