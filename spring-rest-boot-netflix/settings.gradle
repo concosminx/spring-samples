@@ -1,0 +1,5 @@
+rootProject.name = 'spring-rest-boot-netflix'
+
+include 'eureka-server'
+include 'notifications-service'
+include 'api-service'

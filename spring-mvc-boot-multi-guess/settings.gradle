@@ -1,0 +1,5 @@
+rootProject.name = 'spring-mvc-boot-multi-guess'
+
+include 'console'
+include 'core'
+include 'web'

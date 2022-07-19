@@ -1,0 +1,4 @@
+rootProject.name = 'spring-mvc-boot-multiprj'
+
+include 'library'
+include 'application'
