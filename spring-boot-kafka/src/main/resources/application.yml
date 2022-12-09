@@ -1,0 +1,8 @@
+server:
+  port: 9000
+
+
+#when setting boostrap-servers check PLAINTEXT_HOST from Kafka
+spring:
+  kafka:
+    bootstrap-servers: "192.168.139.130:29092"
