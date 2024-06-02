@@ -1,0 +1,15 @@
+version: "3.6"
+
+services:
+  redis:
+    image: redis/redis-stack:latest
+    container_name: redis-stack
+    ports:
+      - 6379:6379
+      - 8001:8001
+    healthcheck:
+      test: [ "CMD", "redis-cli", "--raw", "incr", "ping" ]
+    volumes:
+      - ./redis_data:/data
+
+#docker exec -it redis-stack redis-cli
