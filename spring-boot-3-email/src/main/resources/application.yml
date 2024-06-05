@@ -16,3 +16,10 @@ spring:
     #        required: true
     #      timeout: 5000
     #      writetimeout: 5000
+
+myapp:
+  sometask: true
+
+
+  #java -Duser.timezone=Europe/Athens -jar spring-core-4-0.0.1-SNAPSHOT.jar
+  #
